@@ -1,6 +1,6 @@
 rm(list=ls())
 #load data
-cdata<- read.csv("~/GitHub/Dal-Intertidal-2014/Consultant Data Sheet 2013.csv")
+cdata<- read.csv("~/Documents/Dalhousie/Intertidal Ecology/Dal-Intertidal-2014/Consultant Data Sheet 2013.csv")
 
 # create record for each ID
 cdata2 <- cbind(as.character(unique(cdata$ID)),0,0)
@@ -29,7 +29,7 @@ cdata2$count[is.na(cdata2$count)]=0
 #calculate density
 cdata2$density <- cdata2$count/cdata2$volume
 
-write.csv(cdata2,"~/GitHub/Dal-Intertidal-2014/Consultant Data Sheet 2 2013.csv")
+write.csv(cdata2,"~/Documents/Dalhousie/Intertidal Ecology/Dal-Intertidal-2014/Consultant Data Sheet 2 2013.csv")
 
 
 ################ 5a ############################
@@ -44,13 +44,13 @@ plot(obj, main="Histogram of Overall Clam Size", xlab="Size of Clam (mm)", ylab=
 # by tidal height
 obj <- hist(cdata$size_mm[cdata$strata=="H"])
 obj$counts <- obj$counts/sum(obj$counts)*100
-plot(obj, main="Histogram of Clam Size at High Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60))
+plot(obj, main="Histogram of Clam Size at High Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60), ylim=c(0,90))
 obj <- hist(cdata$size_mm[cdata$strata=="M"])
 obj$counts <- obj$counts/sum(obj$counts)*100
-plot(obj, , main="Histogram of Clam Size at Mid Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60))
+plot(obj, , main="Histogram of Clam Size at Mid Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60), ylim=c(0,90))
 obj <- hist(cdata$size_mm[cdata$strata=="L"])
 obj$counts <- obj$counts/sum(obj$counts)*100
-plot(obj, main="Histogram of Clam Size at Low Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60))
+plot(obj, main="Histogram of Clam Size at Low Tide Level", xlab="Size of clam (mm)", ylab="Percentage", xlim=c(0,60), ylim=c(0,90))
 
 ######################## 5b ##################
 hist(cdata$size_mm[cdata$depth_bin==1], main="Histogram of Depth 0-4cm", xlab="Size of clam (mm)")
