@@ -75,9 +75,10 @@ plot(obj, main="Histogram of Clam Size at Low Tide Level", xlab="Size of clam (m
 ######################## 5b ##################
 par(mfrow=c(3,2))
 hist(cdata$size_mm[cdata$depth_bin==1], main="Histogram of Depth 0-4cm", xlab="Size of clam (mm)", breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60))
+plot.new()
 hist(cdata$size_mm[cdata$depth_bin==2], main="Histogram of Depth 4-8cm", xlab="Size of clam (mm)", xlim=c(0,60), breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60))
-hist(cdata$size_mm[cdata$depth_bin==3], main="Histogram of Depth 8-12cm", xlab="Size of clam (mm)", ylim=c(0,3), breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60))
-hist(cdata$size_mm[cdata$depth_bin==4], main="Histogram of Depth 12-16cm", xlab="Size of clam (mm)", breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60), ylim=c(0,3))
+hist(cdata$size_mm[cdata$depth_bin==3], main="Histogram of Depth 8-12cm", xlab="Size of clam (mm)", ylim=c(0,10), breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60))
+hist(cdata$size_mm[cdata$depth_bin==4], main="Histogram of Depth 12-16cm", xlab="Size of clam (mm)", breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60), ylim=c(0,10))
 hist(cdata$size_mm[cdata$depth_bin==5], main="Histogram of Depth 16-30cm", xlab="Size of clam (mm)", breaks=c(0,5,10,15,20,25,30,35,40,45,50,55,60), ylim=c(0,10))
 
 ######################## 5c #####################
